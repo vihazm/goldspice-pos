@@ -1,0 +1,28 @@
+# Secrets / local config
+db.properties
+.env
+*.env
+*.pem
+*.key
+*.jks
+*.p12
+
+# Claude Code
+.claude/
+CLAUDE.md
+
+# Build output (contains compiled code and copied libs)
+build/
+dist/
+*.class
+*.jar
+
+# NetBeans local files
+nbproject/private/
+
+# IDE / OS
+.idea/
+.vscode/
+*.log
+.DS_Store
+Thumbs.db
