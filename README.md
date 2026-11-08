@@ -31,9 +31,9 @@ A Java Swing desktop point-of-sale and store management app for a Ceylon spice b
 | Manager | manager1 | manager123 |
 | Cashier | cashier1 | cashier123 |
 
-These are demo accounts for local testing only. Change them before any real use.
+Passwords are stored as salted PBKDF2 hashes. These are demo accounts for local testing only, so change them before any real use.
 
 ## Known limitations
-- User passwords are stored in plain text.
-- `LoginController` still has a hardcoded `admin` / `admin123` login.
+- The app connects as the MySQL `root` user; for real use, create a dedicated limited MySQL user.
 - The Reports screen is an unfinished stub.
+- The Password field on the User Management screen is a plain text box.

@@ -130,7 +130,7 @@
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="usernameinActionPerformed"/>
           </Events>
         </Component>
-        <Component class="javax.swing.JTextField" name="passwordin">
+        <Component class="javax.swing.JPasswordField" name="passwordin">
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="passwordinActionPerformed"/>
           </Events>

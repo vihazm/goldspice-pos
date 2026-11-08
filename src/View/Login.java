@@ -42,7 +42,7 @@ public class Login extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         usernamein = new javax.swing.JTextField();
-        passwordin = new javax.swing.JTextField();
+        passwordin = new javax.swing.JPasswordField();
         loginbtn = new javax.swing.JButton();
         jLabel4 = new javax.swing.JLabel();
 
@@ -222,7 +222,7 @@ public String getUsername() {
 }
 
 public String getPassword() {
-    return passwordin.getText();
+    return new String(passwordin.getPassword());
 }
 
 public void showMessage(String message) {
@@ -240,7 +240,7 @@ public void addLoginListener(java.awt.event.ActionListener listener) {
     private javax.swing.JLabel jLabel4;
     private javax.swing.JPanel loginbg;
     private javax.swing.JButton loginbtn;
-    private javax.swing.JTextField passwordin;
+    private javax.swing.JPasswordField passwordin;
     private javax.swing.JTextField usernamein;
     // End of variables declaration//GEN-END:variables
 }

@@ -26,15 +26,7 @@ public class LoginController {
             String username = view.getUsername();
             String password = view.getPassword();
 
-            // Check for hardcoded admin credentials first
-            if ("admin".equals(username) && "admin123".equals(password)) {
-                JOptionPane.showMessageDialog(view, "Admin Login Successful! Welcome Admin.");
-                view.dispose();
-                new AdminDash().setVisible(true);
-                return; // Stop further processing
-            }
-
-            // If not admin, authenticate by referring against the database
+            // Authenticate by referring against the database
             user authenticatedUser = userController.authenticate(username, password);
 
             if (authenticatedUser != null) {

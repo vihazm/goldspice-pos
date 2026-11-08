@@ -19,7 +19,7 @@ public class UserController {
 
             pst.setString(1, name);
             pst.setString(2, username);
-            pst.setString(3, password);
+            pst.setString(3, PasswordUtil.hash(password));
             pst.setString(4, userRole);
             pst.setString(5, joinDate);
 
@@ -76,15 +76,14 @@ public class UserController {
     }
 
     public user authenticate(String username, String password) {
-         String query = "SELECT User_id, Name, Username, Password, User_role, Join_date FROM user WHERE Username = ? AND Password = ?";
+         String query = "SELECT User_id, Name, Username, Password, User_role, Join_date FROM user WHERE Username = ?";
     try (Connection con = DBConnection.getConnection();
          PreparedStatement pst = con.prepareStatement(query)) {
 
         pst.setString(1, username);
-        pst.setString(2, password);
 
         try (ResultSet rs = pst.executeQuery()) {
-            if (rs.next()) {
+            if (rs.next() && PasswordUtil.verify(password, rs.getString("Password"))) {
                 // A user was found, create a user object and return it
                 int userId = rs.getInt("User_id");
                 String name = rs.getString("Name");
